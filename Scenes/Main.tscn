@@ -1,0 +1,343 @@
+[gd_scene load_steps=14 format=3 uid="uid://dvnpi11atnysn"]
+
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="1_ih68w"]
+[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_o6txl"]
+[ext_resource type="StyleBox" uid="uid://dt47dv6vlmntn" path="res://Resource/Main.tres" id="2_tjlsq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lubcf"]
+bg_color = Color(0.422591, 0.605189, 0.999996, 1)
+border_width_left = 17
+border_width_top = 15
+border_width_right = 16
+border_width_bottom = 10
+border_color = Color(0.264485, 0.48305, 0.99998, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192369, 0.422229, 1, 0.6)
+
+[sub_resource type="Animation" id="Animation_obtrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.422591, 0.605189, 0.999996, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.264485, 0.48305, 0.99998, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_iih10"]
+resource_name = "brillar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.422591, 0.605189, 0.999996, 1), Color(0.237653, 0.460898, 0.999972, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.264485, 0.48305, 0.99998, 1), Color(0.117536, 0.354103, 0.999935, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqkwe"]
+_data = {
+"RESET": SubResource("Animation_obtrd"),
+"brillar": SubResource("Animation_iih10")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2fcq"]
+bg_color = Color(0.422591, 0.605189, 0.999996, 1)
+border_width_left = 17
+border_width_top = 15
+border_width_right = 16
+border_width_bottom = 10
+border_color = Color(0.264485, 0.48305, 0.99998, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192157, 0.423529, 1, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwqyn"]
+bg_color = Color(0.422591, 0.605189, 0.999996, 1)
+border_width_left = 17
+border_width_top = 15
+border_width_right = 16
+border_width_bottom = 10
+border_color = Color(0.264485, 0.48305, 0.99998, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192157, 0.423529, 1, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ngvs"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_jhdx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1cyfv"]
+resource_name = "oscurecer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x572k"]
+_data = {
+"RESET": SubResource("Animation_jhdx3"),
+"oscurecer": SubResource("Animation_1cyfv")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o6txl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_tjlsq")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 125.0
+offset_right = 1017.0
+offset_bottom = 228.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ih68w")
+theme_override_font_sizes/font_size = 83
+text = "¿que haremos hoy?"
+horizontal_alignment = 1
+
+[node name="Productos" type="Button" parent="."]
+layout_mode = 2
+offset_left = 41.0
+offset_top = 244.0
+offset_right = 467.0
+offset_bottom = 299.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_lubcf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lubcf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lubcf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lubcf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lubcf")
+
+[node name="Texto" type="Label" parent="Productos"]
+layout_mode = 0
+offset_left = 9.33334
+offset_top = 5.33335
+offset_right = 416.333
+offset_bottom = 51.3334
+theme_override_fonts/font = ExtResource("1_ih68w")
+theme_override_font_sizes/font_size = 36
+text = "Gestionar Productos"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Productos"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="Pedidos" type="Button" parent="."]
+layout_mode = 2
+offset_left = 382.0
+offset_top = 244.0
+offset_right = 808.0
+offset_bottom = 299.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2fcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c2fcq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c2fcq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_c2fcq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c2fcq")
+
+[node name="Texto" type="Label" parent="Pedidos"]
+layout_mode = 0
+offset_left = 9.33334
+offset_top = 5.33335
+offset_right = 416.333
+offset_bottom = 51.3334
+theme_override_fonts/font = ExtResource("1_ih68w")
+theme_override_font_sizes/font_size = 36
+text = "Gestionar Pedidos"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pedidos"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="Clientes" type="Button" parent="."]
+layout_mode = 2
+offset_left = 211.0
+offset_top = 321.0
+offset_right = 637.0
+offset_bottom = 376.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_fwqyn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fwqyn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fwqyn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fwqyn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fwqyn")
+
+[node name="Texto" type="Label" parent="Clientes"]
+layout_mode = 0
+offset_left = 9.33334
+offset_top = 5.33335
+offset_right = 416.333
+offset_bottom = 51.3334
+theme_override_fonts/font = ExtResource("1_ih68w")
+theme_override_font_sizes/font_size = 36
+text = "Gestionar Clientes"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clientes"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ngvs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel2"]
+libraries = {
+"": SubResource("AnimationLibrary_x572k")
+}
+
+[connection signal="mouse_entered" from="Productos" to="." method="_on_productos_mouse_entered"]
+[connection signal="mouse_exited" from="Productos" to="." method="_on_productos_mouse_exited"]
+[connection signal="pressed" from="Productos" to="." method="_on_productos_pressed"]
+[connection signal="mouse_entered" from="Pedidos" to="." method="_on_pedidos_mouse_entered"]
+[connection signal="mouse_exited" from="Pedidos" to="." method="_on_pedidos_mouse_exited"]
+[connection signal="pressed" from="Pedidos" to="." method="_on_pedidos_pressed"]
+[connection signal="mouse_entered" from="Clientes" to="." method="_on_clientes_mouse_entered"]
+[connection signal="mouse_exited" from="Clientes" to="." method="_on_clientes_mouse_exited"]
+[connection signal="pressed" from="Clientes" to="." method="_on_clientes_pressed"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://0u7ieny4uv0t"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/Cartel_DetallesPedido/Cartel_DetallesPedido.gd" id="1_hu8dd"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="1_ktq63"]
+[ext_resource type="Texture2D" uid="uid://b7ds3p1nixgyo" path="res://iconos/cerrar.png" id="2_q82er"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leb6t"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmlsk"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmfc6"]
+bg_color = Color(0, 0.964706, 0, 1)
+border_width_left = 50
+border_width_top = 50
+border_width_right = 50
+border_width_bottom = 50
+border_color = Color(0.462745, 1, 0.427451, 1)
+border_blend = true
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -366.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hu8dd")
+
+[node name="Detalles_Pedido" type="Panel" parent="."]
+offset_right = 434.0
+offset_bottom = 373.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_leb6t")
+
+[node name="Cartel" type="Panel" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_right = 434.0
+offset_bottom = 373.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmlsk")
+
+[node name="Productos" type="Label" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 12.0
+offset_right = 640.0
+offset_bottom = 80.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("1_ktq63")
+theme_override_font_sizes/font_size = 54
+text = "Productos:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Detalles Pedido Panel" type="Panel" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 43.0
+offset_right = 398.0
+offset_bottom = 319.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmfc6")
+
+[node name="Detalles Pedido" type="ScrollContainer" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 44.0
+offset_right = 403.0
+offset_bottom = 320.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Detalles_Pedido/Detalles Pedido"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="TextureButton" type="TextureButton" parent="Detalles_Pedido"]
+modulate = Color(0, 0.992169, 0, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 521.0
+offset_bottom = 517.0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("2_q82er")
+texture_pressed = ExtResource("2_q82er")
+texture_hover = ExtResource("2_q82er")
+texture_disabled = ExtResource("2_q82er")
+texture_focused = ExtResource("2_q82er")

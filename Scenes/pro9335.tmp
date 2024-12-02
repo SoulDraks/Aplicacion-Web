@@ -1,0 +1,178 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnaw32asvt3u5"]
+
+[ext_resource type="StyleBox" uid="uid://dt47dv6vlmntn" path="res://Resource/Main.tres" id="1_hdsfi"]
+[ext_resource type="Script" path="res://Scenes/productos.gd" id="1_uxx4g"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="2_u60yu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbryb"]
+bg_color = Color(0.422591, 0.605189, 0.999996, 1)
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color(0.264485, 0.48305, 0.99998, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192369, 0.422229, 1, 0.6)
+
+[sub_resource type="Animation" id="Animation_obtrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.422591, 0.605189, 0.999996, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.264485, 0.48305, 0.99998, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_iih10"]
+resource_name = "brillar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.422591, 0.605189, 0.999996, 1), Color(0.237653, 0.460898, 0.999972, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.264485, 0.48305, 0.99998, 1), Color(0.117536, 0.354103, 0.999935, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqkwe"]
+_data = {
+"RESET": SubResource("Animation_obtrd"),
+"brillar": SubResource("Animation_iih10")
+}
+
+[node name="Productos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uxx4g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_hdsfi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 27.0
+offset_right = 519.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.420277, 1, 0.394772, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 46
+text = "Productos"
+
+[node name="Productos" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 98.0
+offset_right = 774.0
+offset_bottom = 458.0
+
+[node name="GridContainer" type="GridContainer" parent="Productos"]
+layout_mode = 2
+theme_override_constants/h_separation = 384
+theme_override_constants/v_separation = 167
+columns = 2
+
+[node name="Añadir Producto" type="Button" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 505.0
+offset_right = 610.0
+offset_bottom = 560.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jbryb")
+
+[node name="Texto" type="Label" parent="Añadir Producto"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 321.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.294118, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 36
+text = "Añadir Producto"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Añadir Producto"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}

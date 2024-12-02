@@ -1,0 +1,514 @@
+[gd_scene load_steps=16 format=3 uid="uid://ddng5s85xwtbt"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/Pedido_Agregar/pedido_añadir.gd" id="1_7dpn2"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="2_lag1x"]
+[ext_resource type="Texture2D" uid="uid://b7ds3p1nixgyo" path="res://iconos/cerrar.png" id="3_57wc0"]
+[ext_resource type="Script" path="res://Scripts/Scenes/Pedido_Agregar/Cliente.gd" id="3_onmfl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx6wo"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yqus"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iherr"]
+bg_color = Color(0, 0.513726, 0, 0.407843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_601a7"]
+bg_color = Color(0, 0.513726, 0, 0.407843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw1xa"]
+bg_color = Color(0.658824, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsc86"]
+bg_color = Color(0, 0.964706, 0, 1)
+border_width_left = 50
+border_width_top = 50
+border_width_right = 50
+border_width_bottom = 50
+border_color = Color(0.462745, 1, 0.427451, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ont2g"]
+bg_color = Color(0, 0.937255, 0.0705882, 1)
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192369, 0.422229, 1, 0.6)
+
+[sub_resource type="Animation" id="Animation_obtrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.937255, 0.0705882, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.270588, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Añadir:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Añadir:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u31s8"]
+resource_name = "aparecer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Añadir:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Añadir:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iih10"]
+resource_name = "brillar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 0.823529, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.270588, 0, 1), Color(0, 0.14902, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqkwe"]
+_data = {
+"RESET": SubResource("Animation_obtrd"),
+"aparecer": SubResource("Animation_u31s8"),
+"brillar": SubResource("Animation_iih10")
+}
+
+[node name="Pedido" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -558.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7dpn2")
+
+[node name="Cartel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 159.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kx6wo")
+
+[node name="Cartel" type="Panel" parent="Cartel"]
+layout_mode = 0
+offset_right = 294.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6yqus")
+
+[node name="Texto" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 15.0
+offset_right = 216.0
+offset_bottom = 132.0
+
+[node name="ID Pedido" type="Label" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -10.0
+offset_right = 594.0
+offset_bottom = 46.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.270588, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 45
+text = "Pedido #"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fecha" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 25.0
+offset_right = 610.0
+offset_bottom = 88.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_lag1x")
+theme_override_font_sizes/normal_font_size = 45
+text = "Fecha:         -           -"
+
+[node name="Dia" type="TextEdit" parent="Texto"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 87.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_iherr")
+placeholder_text = "Dia"
+wrap_mode = 1
+
+[node name="Mes" type="TextEdit" parent="Texto"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 87.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_iherr")
+placeholder_text = "Mes"
+wrap_mode = 1
+
+[node name="Año" type="TextEdit" parent="Texto"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 24.0
+offset_right = 165.0
+offset_bottom = 87.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iherr")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_iherr")
+placeholder_text = "Año"
+wrap_mode = 1
+
+[node name="Total" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 49.0
+offset_right = 349.0
+offset_bottom = 109.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_lag1x")
+theme_override_font_sizes/normal_font_size = 45
+text = "Total: $0"
+
+[node name="Estado" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 73.0
+offset_right = 99.0
+offset_bottom = 136.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_lag1x")
+theme_override_font_sizes/normal_font_size = 45
+text = "Estado:"
+
+[node name="Estado2" type="OptionButton" parent="Texto"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 73.0
+offset_right = 445.0
+offset_bottom = 181.0
+scale = Vector2(0.17, 0.17)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_601a7")
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "En Proceso"
+popup/item_0/id = 0
+popup/item_1/text = "Enviado"
+popup/item_1/id = 1
+popup/item_2/text = "Completado"
+popup/item_2/id = 2
+
+[node name="ID_Cliente" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 94.0
+offset_right = 99.0
+offset_bottom = 154.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_lag1x")
+theme_override_font_sizes/normal_font_size = 45
+text = "Cliente:"
+
+[node name="Cliente" type="OptionButton" parent="Texto"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = 94.0
+offset_right = 473.0
+offset_bottom = 202.0
+scale = Vector2(0.17, 0.17)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_601a7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_601a7")
+alignment = 1
+script = ExtResource("3_onmfl")
+
+[node name="Detalles" type="Button" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 130.0
+offset_right = 279.0
+offset_bottom = 171.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rw1xa")
+text = "Detalles "
+
+[node name="Detalles_Pedido" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -60.0
+offset_top = -97.0
+offset_right = 374.0
+offset_bottom = 276.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kx6wo")
+
+[node name="Cartel" type="Panel" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_right = 434.0
+offset_bottom = 373.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6yqus")
+
+[node name="Cantidad" type="Label" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 12.0
+offset_right = 640.0
+offset_bottom = 80.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 54
+text = "Productos:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Detalles Pedido Panel" type="Panel" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 43.0
+offset_right = 398.0
+offset_bottom = 319.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gsc86")
+
+[node name="Detalles Pedido" type="ScrollContainer" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 43.0
+offset_right = 411.0
+offset_bottom = 319.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Detalles_Pedido/Detalles Pedido"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="Añadir Producto" type="Button" parent="Detalles_Pedido"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 323.0
+offset_right = 446.0
+offset_bottom = 378.0
+scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_ont2g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ont2g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ont2g")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ont2g")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ont2g")
+
+[node name="Texto" type="Label" parent="Detalles_Pedido/Añadir Producto"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 321.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.294118, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_lag1x")
+theme_override_font_sizes/font_size = 36
+text = "Añadir Producto"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Detalles_Pedido/Añadir Producto"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="TextureButton" type="TextureButton" parent="Detalles_Pedido"]
+modulate = Color(0, 0.992169, 0, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 521.0
+offset_bottom = 517.0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("3_57wc0")
+texture_pressed = ExtResource("3_57wc0")
+texture_hover = ExtResource("3_57wc0")
+texture_disabled = ExtResource("3_57wc0")
+texture_focused = ExtResource("3_57wc0")
+
+[connection signal="pressed" from="Detalles" to="." method="_on_detalles_pressed"]
+[connection signal="pressed" from="Detalles_Pedido/Añadir Producto" to="." method="_on_añadir_producto_pressed"]
+[connection signal="pressed" from="Detalles_Pedido/TextureButton" to="." method="_on_texture_button_pressed"]

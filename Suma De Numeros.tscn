@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnsqcstnfsx3k"]
+
+[ext_resource type="Script" path="res://Codigo/Codigo.gd" id="1_stjac"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nabx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 100
+border_width_top = 100
+border_width_right = 100
+border_width_bottom = 100
+border_color = Color(0.615686, 0.615686, 0.564706, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -17.0
+offset_right = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.803435, 0.824612)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1nabx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 130.0
+offset_right = 1253.0
+offset_bottom = 267.0
+scale = Vector2(0.478651, 0.405676)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Ingrese un numero: 
+"
+
+[node name="Num1" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 216.0
+offset_right = 693.0
+offset_bottom = 275.0
+text = "skakks"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 310.0
+offset_right = 1247.0
+offset_bottom = 447.0
+scale = Vector2(0.478651, 0.405676)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Ingrese otro numero: 
+"
+
+[node name="Num2" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 413.0
+offset_right = 691.0
+offset_bottom = 472.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 551.0
+offset_right = 631.0
+offset_bottom = 696.0
+theme_override_font_sizes/font_size = 100
+text = "+"
+script = ExtResource("1_stjac")
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]

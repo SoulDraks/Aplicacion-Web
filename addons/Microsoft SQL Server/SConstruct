@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+import os
+import sys
+
+env = SConscript("godot-cpp/SConstruct")
+
+# For reference:
+# - CCFLAGS are compilation flags shared between C and C++
+# - CFLAGS are for C-specific compilation flags
+# - CXXFLAGS are for C++-specific compilation flags
+# - CPPFLAGS are for pre-processor flags
+# - CPPDEFINES are for pre-processor defines
+# - LINKFLAGS are for linking flags
+
+# Rutas de las librerias, vos deberias tenerlas por ahi espero XD, sino, cambialas.
+odbc_include_dir = 'C:/Program Files (x86)/Microsoft SQL Server/Client SDK/ODBC/170/SDK/Include'
+odbc_lib_dir = 'C:/Program Files (x86)/Microsoft SQL Server/Client SDK/ODBC/170/SDK/Lib/x64'
+
+# Esto es para las bibliotecas de los Drivers ODBC para SQL Server.
+env.Append(CPPPATH=[odbc_include_dir])
+env.Append(LIBPATH=[odbc_lib_dir])
+
+# tweak this if you want to use different folders, or more folders, to store your source code in.
+env.Append(CPPPATH=["src/"])
+sources = Glob("src/*.cpp")
+
+if env["platform"] == "macos":
+    library = env.SharedLibrary(
+        "demo/bin/libgdexample.{}.{}.framework/libgdexample.{}.{}".format(
+            env["platform"], env["target"], env["platform"], env["target"]
+        ),
+        source=sources,
+    )
+elif env["platform"] == "ios":
+    if env["ios_simulator"]:
+        library = env.StaticLibrary(
+            "demo/bin/libgdexample.{}.{}.simulator.a".format(env["platform"], env["target"]),
+            source=sources,
+        )
+    else:
+        library = env.StaticLibrary(
+            "demo/bin/libgdexample.{}.{}.a".format(env["platform"], env["target"]),
+            source=sources,
+        )
+else:
+    library = env.SharedLibrary(
+        "bin/libsql_connection_SoulDraks{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        source=sources,
+    )
+
+Default(library)

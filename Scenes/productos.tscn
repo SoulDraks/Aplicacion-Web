@@ -1,0 +1,559 @@
+[gd_scene load_steps=20 format=3 uid="uid://cnaw32asvt3u5"]
+
+[ext_resource type="StyleBox" uid="uid://dt47dv6vlmntn" path="res://Resource/Main.tres" id="1_hdsfi"]
+[ext_resource type="Script" path="res://Scripts/Scenes/Productos/productos.gd" id="1_nmr04"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="2_u60yu"]
+[ext_resource type="PackedScene" uid="uid://63ouwqmrgfjx" path="res://Scenes/producto_agregar.tscn" id="4_isyrl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbryb"]
+bg_color = Color(0, 0.937255, 0.0705882, 1)
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192369, 0.422229, 1, 0.6)
+
+[sub_resource type="Animation" id="Animation_obtrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.937255, 0.0705882, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.270588, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Añadir:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Añadir:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u31s8"]
+resource_name = "aparecer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Añadir:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Añadir:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iih10"]
+resource_name = "brillar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 0.823529, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/normal:border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.270588, 0, 1), Color(0, 0.14902, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_styles/normal:shadow_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqkwe"]
+_data = {
+"RESET": SubResource("Animation_obtrd"),
+"aparecer": SubResource("Animation_u31s8"),
+"brillar": SubResource("Animation_iih10")
+}
+
+[sub_resource type="Animation" id="Animation_8p2rn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_agdg4"]
+resource_name = "oscurecer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgfbd"]
+_data = {
+"RESET": SubResource("Animation_8p2rn"),
+"oscurecer": SubResource("Animation_agdg4")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydy8q"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kao4o"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0shqb"]
+bg_color = Color(0.658824, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id="Animation_u2g76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5brqr"]
+resource_name = "aparecer"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ibx5q"]
+_data = {
+"RESET": SubResource("Animation_u2g76"),
+"aparecer": SubResource("Animation_5brqr")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2itxq"]
+bg_color = Color(0, 0.937255, 0.0705882, 1)
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.192369, 0.422229, 1, 0.6)
+
+[node name="Productos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmr04")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_hdsfi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 27.0
+offset_right = 519.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.420277, 1, 0.394772, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 46
+text = "Productos"
+
+[node name="Productos" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 98.0
+offset_right = 774.0
+offset_bottom = 458.0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Productos"]
+layout_mode = 2
+theme_override_constants/h_separation = 380
+theme_override_constants/v_separation = 167
+columns = 2
+
+[node name="Añadir Producto" type="Button" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 505.0
+offset_right = 610.0
+offset_bottom = 560.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jbryb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jbryb")
+
+[node name="Texto" type="Label" parent="Añadir Producto"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 321.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.294118, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 36
+text = "Añadir Producto"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Añadir Producto"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel2"]
+libraries = {
+"": SubResource("AnimationLibrary_tgfbd")
+}
+
+[node name="Borrar" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_left = 209.0
+offset_top = 215.0
+offset_right = 510.0
+offset_bottom = 378.0
+scale = Vector2(1.2, 1.2)
+
+[node name="Cartel" type="Panel" parent="Borrar"]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 159.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ydy8q")
+
+[node name="Cartel" type="Panel" parent="Borrar/Cartel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 295.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kao4o")
+
+[node name="Titulo" type="Label" parent="Borrar"]
+layout_mode = 0
+offset_left = 14.1667
+offset_top = 5.83332
+offset_right = 533.167
+offset_bottom = 61.8333
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.270588, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 45
+text = "¿Estas Seguro?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descripcion" type="RichTextLabel" parent="Borrar"]
+layout_mode = 0
+offset_left = 35.8333
+offset_top = 40.0
+offset_right = 604.833
+offset_bottom = 228.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_u60yu")
+theme_override_font_sizes/normal_font_size = 45
+text = "¿Esta seguro que desea eliminar el producto \"Tal\"?"
+text_direction = 3
+
+[node name="Si" type="Button" parent="Borrar"]
+layout_mode = 0
+offset_left = 18.3333
+offset_top = 121.667
+offset_right = 199.333
+offset_bottom = 162.667
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0shqb")
+text = "Si"
+
+[node name="No" type="Button" parent="Borrar"]
+layout_mode = 0
+offset_left = 156.667
+offset_top = 122.5
+offset_right = 337.667
+offset_bottom = 163.5
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0shqb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0shqb")
+text = "No"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Borrar"]
+libraries = {
+"": SubResource("AnimationLibrary_ibx5q")
+}
+
+[node name="Añadir" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 326.0
+offset_top = 440.0
+offset_right = 521.0
+offset_bottom = 495.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_2itxq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2itxq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2itxq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2itxq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2itxq")
+
+[node name="Texto" type="Label" parent="Añadir"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 173.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.294118, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_u60yu")
+theme_override_font_sizes/font_size = 36
+text = "Añadir"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Añadir"]
+libraries = {
+"": SubResource("AnimationLibrary_qqkwe")
+}
+
+[node name="Producto_Añadir" parent="." instance=ExtResource("4_isyrl")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 225.0
+offset_top = 210.0
+offset_right = -333.0
+offset_bottom = -241.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Producto_Añadir"]
+libraries = {
+"": SubResource("AnimationLibrary_ibx5q")
+}
+
+[connection signal="pressed" from="Añadir Producto" to="." method="_on_añadir_producto_pressed"]
+[connection signal="pressed" from="Borrar/Si" to="." method="_on_si_pressed"]
+[connection signal="pressed" from="Borrar/No" to="." method="_on_no_pressed"]

@@ -1,0 +1,183 @@
+[gd_scene load_steps=8 format=3 uid="uid://dytgvf8yqauwy"]
+
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="1_0ovjq"]
+[ext_resource type="Script" path="res://Scenes/pedido.gd" id="1_li8hq"]
+[ext_resource type="Texture2D" uid="uid://c0iu2w1uoa0eq" path="res://iconos/boligrafo.png" id="2_014j5"]
+[ext_resource type="Texture2D" uid="uid://bfwhgca8u3jjv" path="res://iconos/borrar.png" id="3_5rrkx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx6wo"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yqus"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw1xa"]
+bg_color = Color(0.658824, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.270588, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Pedido" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -558.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_li8hq")
+
+[node name="Cartel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 159.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kx6wo")
+
+[node name="Cartel" type="Panel" parent="Cartel"]
+layout_mode = 0
+offset_right = 294.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6yqus")
+
+[node name="Texto" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 15.0
+offset_right = 216.0
+offset_bottom = 132.0
+
+[node name="ID Pedido" type="Label" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -10.0
+offset_right = 594.0
+offset_bottom = 46.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.270588, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("1_0ovjq")
+theme_override_font_sizes/font_size = 45
+text = "Pedido #??????"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fecha" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 25.0
+offset_right = 610.0
+offset_bottom = 88.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_0ovjq")
+theme_override_font_sizes/normal_font_size = 45
+text = "Fecha: ??/??/??"
+
+[node name="Total" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 49.0
+offset_right = 806.0
+offset_bottom = 109.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_0ovjq")
+theme_override_font_sizes/normal_font_size = 45
+text = "Total: $??????"
+
+[node name="Estado" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 73.0
+offset_right = 742.0
+offset_bottom = 136.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_0ovjq")
+theme_override_font_sizes/normal_font_size = 45
+text = "Estado: ??????"
+
+[node name="ID_Cliente" type="RichTextLabel" parent="Texto"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 94.0
+offset_right = 586.0
+offset_bottom = 154.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_0ovjq")
+theme_override_font_sizes/normal_font_size = 45
+text = "Cliente: ?????"
+
+[node name="Editar" type="TextureButton" parent="."]
+modulate = Color(0, 0.470434, 6.73831e-07, 1)
+layout_mode = 0
+offset_left = 216.0
+offset_top = 121.0
+offset_right = 728.0
+offset_bottom = 633.0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("2_014j5")
+texture_pressed = ExtResource("2_014j5")
+texture_hover = ExtResource("2_014j5")
+texture_disabled = ExtResource("2_014j5")
+
+[node name="Borrar" type="TextureButton" parent="."]
+modulate = Color(0, 0.635294, 0, 1)
+layout_mode = 0
+offset_left = 255.0
+offset_top = 120.0
+offset_right = 767.0
+offset_bottom = 632.0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("3_5rrkx")
+texture_pressed = ExtResource("3_5rrkx")
+texture_hover = ExtResource("3_5rrkx")
+texture_disabled = ExtResource("3_5rrkx")
+texture_focused = ExtResource("3_5rrkx")
+
+[node name="Detalles" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 131.0
+offset_right = 195.0
+offset_bottom = 172.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("1_0ovjq")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rw1xa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rw1xa")
+text = " Ver Detalles "
+
+[connection signal="pressed" from="Editar" to="." method="_on_editar_pressed"]
+[connection signal="pressed" from="Borrar" to="." method="_on_borrar_pressed"]
+[connection signal="pressed" from="Detalles" to="." method="_on_detalles_pressed"]

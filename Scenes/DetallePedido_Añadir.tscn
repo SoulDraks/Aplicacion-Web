@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsl88pddd5s14"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/DetallePedido/DetallePedido.gd" id="1_q6sb5"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="2_8lo6a"]
+[ext_resource type="Texture2D" uid="uid://b4ofuwkw7f7b0" path="res://iconos/cerrar2.png" id="3_0m3f1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyqsg"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjhyd"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqdf3"]
+bg_color = Color(0, 0.513726, 0, 0.407843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efgiu"]
+bg_color = Color(0, 0.513726, 0, 0.407843)
+
+[node name="DetallePedido" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -399.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6sb5")
+metadata/_edit_vertical_guides_ = [-111.0]
+
+[node name="Cartel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 2.0
+offset_right = 397.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyqsg")
+
+[node name="Cartel" type="Panel" parent="Cartel"]
+layout_mode = 0
+offset_right = 367.0
+offset_bottom = 47.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjhyd")
+
+[node name="Opciones" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 2.0
+offset_right = 375.0
+offset_bottom = 62.0
+
+[node name="Producto" type="Label" parent="Opciones"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 179.0
+offset_bottom = 56.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_8lo6a")
+theme_override_font_sizes/font_size = 34
+text = "Producto:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Producto_Elegir" type="OptionButton" parent="Opciones"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 13.0
+offset_right = 433.0
+offset_bottom = 121.0
+scale = Vector2(0.17, 0.17)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_8lo6a")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_gqdf3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_gqdf3")
+alignment = 1
+fit_to_longest_item = false
+
+[node name="Cantidad" type="Label" parent="Opciones"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 13.0
+offset_right = 396.0
+offset_bottom = 56.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_8lo6a")
+theme_override_font_sizes/font_size = 34
+text = "Cantidad:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cantidad_Texto" type="TextEdit" parent="Opciones"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 12.0
+offset_right = 492.0
+offset_bottom = 75.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_8lo6a")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_efgiu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_efgiu")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_efgiu")
+placeholder_text = "?????"
+wrap_mode = 1
+
+[node name="Cerrar" type="TextureButton" parent="."]
+modulate = Color(0, 0.985365, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 517.0
+offset_bottom = 525.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("3_0m3f1")
+texture_pressed = ExtResource("3_0m3f1")
+texture_hover = ExtResource("3_0m3f1")
+texture_disabled = ExtResource("3_0m3f1")
+texture_focused = ExtResource("3_0m3f1")
+
+[connection signal="pressed" from="Cerrar" to="." method="_on_cerrar_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0atwrob1y2qt"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/DetallePedido/DetallePedido_normalito.gd" id="1_fw2tj"]
+[ext_resource type="FontFile" uid="uid://mlp8q7px4xto" path="res://Fonts/Super Morning.ttf" id="2_xuixi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyqsg"]
+bg_color = Color(0.461028, 1, 0.429352, 1)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjhyd"]
+bg_color = Color(0.462745, 1, 0.427451, 0)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0.293513, 1.44392e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="DetallePedido" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -434.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fw2tj")
+metadata/_edit_vertical_guides_ = [-111.0]
+
+[node name="Cartel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 364.0
+offset_bottom = 44.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyqsg")
+
+[node name="Cartel" type="Panel" parent="Cartel"]
+layout_mode = 0
+offset_right = 367.0
+offset_bottom = 47.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjhyd")
+
+[node name="Opciones" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 367.0
+offset_bottom = 47.0
+
+[node name="Producto" type="Label" parent="Opciones"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 179.0
+offset_bottom = 56.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_xuixi")
+theme_override_font_sizes/font_size = 34
+text = "Producto: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cantidad" type="Label" parent="Opciones"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 13.0
+offset_right = 396.0
+offset_bottom = 56.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0.270588, 0, 1)
+theme_override_fonts/font = ExtResource("2_xuixi")
+theme_override_font_sizes/font_size = 34
+text = "Cantidad:"
+vertical_alignment = 1
