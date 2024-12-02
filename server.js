@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'autorack.proxy.rlwy.net:56264', 
+    host: 'mysql.railway.internal', 
     user: 'SoulDraks', // Pone tu usuario
     password: 'soulcito', // Pone la contraseña de tu usuario
     database: 'tiendita', // Selecciona la base de datos la cual usaras en las consultas :D.
