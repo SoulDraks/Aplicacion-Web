@@ -7,11 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'autorack.proxy.rlwy.net:3306', 
-    user: 'SoulDraks', // Pone tu usuario
-    password: 'soulcito', // Pone la contraseña de tu usuario
-    database: 'tiendita', // Selecciona la base de datos la cual usaras en las consultas :D.
-    port: 3306,
+    host: 'mysql-tiendita.alwaysdata.net', 
+    user: 'tiendita', // Pone tu usuario
+    password: 'isaiasortega11', // Pone la contraseña de tu usuario
+    database: 'tiendita_datos', // Selecciona la base de datos la cual usaras en las consultas :D.
     dateStrings: true
 });
 
