@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'localhost', 
+    host: '181.191.220.153', 
     user: 'SoulDraks', // Pone tu usuario
     password: 'soulcito', // Pone la contraseña de tu usuario
     database: 'tiendita', // Selecciona la base de datos la cual usaras en las consultas :D.
