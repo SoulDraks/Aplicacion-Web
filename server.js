@@ -11,6 +11,7 @@ const db = mysql.createConnection({
     user: 'SoulDraks', // Pone tu usuario
     password: 'soulcito', // Pone la contraseña de tu usuario
     database: 'tiendita', // Selecciona la base de datos la cual usaras en las consultas :D.
+    port: 3306,
     dateStrings: true
 });
 
